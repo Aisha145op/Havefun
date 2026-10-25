@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#302d34" />
+  <title>Handle With Kindness — Painted Journey</title>
+  <link rel="stylesheet" href="style.css?v=21" />
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <div>
+    <p class="eyebrow">A Tiny Delivery Adventure</p>
+        <h1>Handle With <span>Kindness</span></h1>
+      </div>
+      <div class="message-card" aria-live="polite">
+        <small>MESSAGE IN YOUR BACKPACK</small>
+        <p id="messageText">YOU ARE DOING BETTER THAN YOU THINK</p>
+      </div>
+    </header>
+
+    <section class="game-frame" aria-label="Handle With Kindness game">
+      <canvas id="game" width="1280" height="720"></canvas>
+      <div class="grain"></div>
+      <div id="gameToast" class="game-toast" aria-live="polite"></div>
+
+      <div class="hud">
+        <div class="word-count"><span id="wordCount">7</span><small>WORDS SAFE</small></div>
+        <div class="distance"><span id="distanceFill"></span></div>
+        <button id="messageButton" class="message-button" aria-label="Write a new kindness message">✎ MESSAGE</button>
+        <button id="timeButton" class="time-button" aria-label="Change time of day"><span id="timeIcon">☾</span><small id="timeLabel">NIGHT</small></button>
+        <button id="soundButton" class="icon-button" aria-label="Toggle music and sound effects" aria-pressed="false">AUDIO</button>
+      </div>
+
+      <div id="intro" class="overlay visible">
+        <div class="paper">
+          <p class="sticker">SPECIAL DELIVERY!</p>
+          <div class="portrait little-guy"><i></i></div>
+          <h2>Write it. Pack it.<br />Carry it through.</h2>
+          <p>Pack your sentence and carry it through an oil-painted city, watercolor garden and ASCII night.</p>
+          <label class="message-input-label" for="kindMessage">WHAT DOES YOUR FRIEND NEED TO HEAR?</label>
+          <input id="kindMessage" class="message-input" maxlength="90" value="YOU ARE DOING BETTER THAN YOU THINK" placeholder="TYPE 2–10 KIND WORDS…" autocomplete="off" aria-describedby="messageHint" />
+          <small id="messageHint" class="message-hint"><b id="messageCount">7/10 WORDS</b> · type your own message, then press Enter or the button below</small>
+          <div class="controls-row">
+            <span><kbd>B</kbd> BACK</span>
+            <span><kbd>F</kbd> FORWARD</span>
+            <span><kbd>↑</kbd> or <kbd>SPACE</kbd> JUMP</span>
+            <span><kbd>R</kbd> RECALL WORD</span>
+          </div>
+          <button id="startButton" class="primary">Pack message &amp; begin <b>→</b></button>
+        </div>
+      </div>
+
+      <div id="ending" class="overlay">
+        <div class="paper ending-paper">
+          <p class="sticker">MESSAGE DELIVERED</p>
+          <div class="friends"><div class="portrait little-guy"><i></i></div><span>♥</span><div class="portrait friend"><i></i></div></div>
+          <p class="delivered-label">You managed to say:</p>
+          <h2 id="finalMessage"></h2>
+          <p id="endingNote"></p>
+          <div class="score"><span id="finalScore">0</span><small>KINDNESS POINTS</small></div>
+          <button id="replayButton" class="primary">Deliver it again <b>↻</b></button>
+        </div>
+      </div>
+
+      <div id="gameOver" class="overlay">
+        <div class="paper ending-paper">
+          <p class="sticker danger-sticker">DELIVERY INTERRUPTED</p>
+          <div class="portrait worried-guy"><i></i></div>
+          <h2 id="gameOverTitle">Oh, little guy!</h2>
+          <p id="gameOverNote">The rooftops got the better of this delivery.</p>
+          <button id="retryButton" class="primary">Try the delivery again <b>↻</b></button>
+        </div>
+      </div>
+
+      <div class="mobile-controls" aria-label="Touch controls">
+        <button data-control="left">←</button>
+        <button data-control="right">→</button>
+        <button data-control="jump" class="jump">↑</button>
+      </div>
+    </section>
+
+    <footer>
+      <p><strong>PLAYABLE DESIGN PROTOTYPE</strong> · Built to explore the mechanic and mood.</p>
+      <p>Every lost word can be found again.</p>
+    </footer>
+  </main>
+  <script src="game.js?v=watercolor3"></script>
+</body>
+</html>
