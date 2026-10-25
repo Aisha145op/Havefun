@@ -15,14 +15,12 @@ Touch controls are included for smaller screens.
 
 ## Run locally
 
-From the project folder, run:
+For the simplest option, open `web/index.html` in a modern browser. No installation is required.
+
+If your browser restricts local files, run this from the project folder:
 
 ```bash
-cd dist
-python3 -m http.server 8080
-```
-
-Then open `http://localhost:8080` in a browser.
+python3 -m http.server 8080 --directory web
 
 ## Built with
 
